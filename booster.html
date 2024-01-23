@@ -1,0 +1,248 @@
+<HTML>
+
+
+<!-- 1. Creator -->
+
+<HEAD>
+<!--Created by Craig Paardekooper &#169;(2021)-->
+</HEAD>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<!--  2. STYLES-->
+
+<style type="text/css">
+body {
+    font: normal 14px Verdana, Arial, sans-serif;
+}
+table {
+            border-spacing: 0px;
+            table-layout: fixed;
+            margin-left: auto;
+            margin-right: auto;
+        }
+.auto-style1 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: left;
+	vertical-align: bottom;
+	white-space: nowrap;
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+
+.auto-style3 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: center;
+	vertical-align: bottom;
+	white-space: nowrap;
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style4 {
+	background-color: #FFFF00;
+}
+.auto-style5 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: center;
+	vertical-align: middle;
+	white-space: normal;
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	background-color: #FFFF00;
+}
+
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {background: #eee;}
+
+.success {color: green;}
+.info {color: dodgerblue;}
+.warning {color: orange;}
+.danger {color: red;}
+.default {color: black;}
+</style>
+
+
+
+
+<!--3.  BROWSER TITLE -->
+
+<TITLE>Booster Warnings
+</TITLE>
+
+
+
+
+<!--4. JAVA SCRIPT SEARCH FUNCTION -->
+
+<script>
+function searchSname() {
+    var input, filter, found, table, tr, td, i, j;
+var targetId = "";
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+targetId = td[j].parentNode.id;
+td[j].style.backgroundColor = "yellow";
+document.getElementById(targetId).scrollIntoView();
+
+         break;
+
+            } 
+        }
+        if (found) {
+            tr[i].style.display = "";
+            found = false;
+
+        } else {
+            tr[i].style.display = "none";
+
+        }
+    }
+}
+
+
+
+
+function refresh() {
+    var input;
+
+    input = document.getElementById("myInput");
+if (input.value.length == 0){
+reloadpage();
+
+} 
+}
+
+
+<!--5.  JAVASCRIPT RELOAD PAGE FUNCTION -->
+
+function reloadpage(){
+window.location.href = window.location.href;
+document.getElementById("myInput").focus();
+document.getElementById("myInput").select();
+
+
+
+}
+
+
+
+
+<!--  JAVASCRIPT SET LABEL TEXT -->
+function notfound() {
+document.getElementById('label1').innerHTML = 'Your batch code is not in the top 1000 most toxic';
+}
+</script>
+
+
+
+
+<BODY>
+
+
+
+
+
+
+
+
+
+<!-- 7. SUB HEADING -->
+
+<FONT FACE="arial,verdana,helvetica" size="+2" color="black">
+<b>Booster Warnings </b></font><br><br>
+
+
+<!-- NAVIGATION BAR -->
+
+<p>
+<font size="-1">
+<a href="index.html">home</a>&emsp;| &emsp;
+<a href="boosters.html">Booster Warnings by Month</a>&emsp; | &emsp;
+<a href="moderna.html">Moderna</a>&emsp; | &emsp;
+<a href="pfizer.html">Pfizer</a>&emsp; | &emsp;
+<a href="janssen.html">Janssen</a>&emsp; | &emsp;
+<a href="modernaforeigndeaths.html">Moderna (outside USA)</a>&emsp; | &emsp;
+<a href="pfizerforeigndeaths.html">Pfizer (outside USA)</a>&emsp; | &emsp;
+<a href="janssenforeigndeaths.html">Janssen (outside USA)</a>&emsp; | &emsp;
+<a href="combined.html">Severe</a>&emsp; | &emsp;
+<a href="children.html">Children</a>&emsp; | &emsp;
+<a href="clusters.html">Clusters</a>&emsp; | &emsp;
+<a href="allnothing.html">All or Nothing</a>&emsp; | &emsp;
+<a href="time.html">Time till onset</a>&emsp; | &emsp;
+<a href="geography.html">Geography</a>&emsp; | &emsp;
+<a href="connections.html">Causality</a>&emsp; | &emsp;
+<a href="video.html">Video Library</a>&emsp; | &emsp;
+<a href="casereports.html">Case Reports</a>&emsp; | &emsp;
+<a href="lotsize.html">Lot Sizes</a>&emsp; | &emsp;
+<a href="expiry.html">Lot Expiry Dates</a>&emsp; | &emsp;
+<a href="datacleaning.html">Data Cleaning</a>&emsp; | &emsp;
+<a href="background.html">Background</a>&emsp; | &emsp;
+<a href="craig.zip" >Download Source Code</a>&emsp; | &emsp;
+<a href="donatecreditcard.html">Donate</a>
+</font></p><br>
+
+
+
+
+
+
+<!-- 8. WARNING -->
+
+<Font color="red" size="-1"><p><b>Health Warning : </b><br><br>
+
+<p>Booster shots are now being deployed. Here are the latest updates from VAERS showing which booster shots are associated with the most harm.</p><br>
+
+<P><b>Batches distributed in the USA</b></p>
+<ul>
+<li><a href="pfizernov21.xlsx">Pfizer Boosters November 13th 2021 to December 16th 2021</a></li><br>
+<li><a href="modernanov21.xlsx">Moderna Boosters November 13th 2021 to December 16th 2021</a></li>
+</ul>
+
+
+</body>
+</html

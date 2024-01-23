@@ -1,0 +1,332 @@
+<HTML>
+
+
+<!-- 1. Creator -->
+
+<HEAD>
+<!--Created by Craig Paardekooper &#169;(2021)-->
+</HEAD>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<!--  2. STYLES-->
+
+<style type="text/css">
+body {
+    font: normal 14px Verdana, Arial, sans-serif;
+}
+table {
+            border-spacing: 0px;
+            table-layout: fixed;
+            margin-left: auto;
+            margin-right: auto;
+        }
+.auto-style1 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: left;
+	vertical-align: bottom;
+	white-space: nowrap;
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+
+.auto-style3 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: center;
+	vertical-align: bottom;
+	white-space: nowrap;
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style4 {
+	background-color: #FFFF00;
+}
+.auto-style5 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: Calibri, sans-serif;
+	text-align: center;
+	vertical-align: middle;
+	white-space: normal;
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+	background-color: #FFFF00;
+}
+
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {background: #eee;}
+
+.success {color: green;}
+.info {color: dodgerblue;}
+.warning {color: orange;}
+.danger {color: red;}
+.default {color: black;}
+</style>
+
+
+
+
+<!--3.  BROWSER TITLE -->
+
+<TITLE>Recent Batches
+</TITLE>
+
+
+
+
+<!--4. JAVA SCRIPT SEARCH FUNCTION -->
+
+<script>
+function searchSname() {
+    var input, filter, found, table, tr, td, i, j;
+var targetId = "";
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+targetId = td[j].parentNode.id;
+td[j].style.backgroundColor = "yellow";
+document.getElementById(targetId).scrollIntoView();
+
+         break;
+
+            } 
+        }
+        if (found) {
+            tr[i].style.display = "";
+            found = false;
+
+        } else {
+            tr[i].style.display = "none";
+
+        }
+    }
+}
+
+
+
+
+function refresh() {
+    var input;
+
+    input = document.getElementById("myInput");
+if (input.value.length == 0){
+reloadpage();
+
+} 
+}
+
+
+<!--5.  JAVASCRIPT RELOAD PAGE FUNCTION -->
+
+function reloadpage(){
+window.location.href = window.location.href;
+document.getElementById("myInput").focus();
+document.getElementById("myInput").select();
+
+
+
+}
+
+
+
+
+<!--  JAVASCRIPT SET LABEL TEXT -->
+function notfound() {
+document.getElementById('label1').innerHTML = 'Your batch code is not in the top 1000 most toxic';
+}
+</script>
+
+
+
+
+<BODY>
+
+
+
+
+
+
+
+
+
+<!-- 7. SUB HEADING -->
+
+<FONT FACE="arial,verdana,helvetica" size="+2" color="black">
+<b>Recent Batches </b></font><br><br>
+
+
+<!-- NAVIGATION BAR -->
+
+<p>
+<font size="-1">
+<a href="index.html">home</a>&emsp;| &emsp;
+<a href="boosters.html">Booster Warnings by Month</a>&emsp; | &emsp;
+<a href="moderna.html">Moderna</a>&emsp; | &emsp;
+<a href="pfizer.html">Pfizer</a>&emsp; | &emsp;
+<a href="janssen.html">Janssen</a>&emsp; | &emsp;
+<a href="modernaforeigndeaths.html">Moderna (outside USA)</a>&emsp; | &emsp;
+<a href="pfizerforeigndeaths.html">Pfizer (outside USA)</a>&emsp; | &emsp;
+<a href="janssenforeigndeaths.html">Janssen (outside USA)</a>&emsp; | &emsp;
+<a href="international.html">International Deadly Lots</a>&emsp; | &emsp;
+<a href="firstsecond.html">1st & 2nd Doses</a>&emsp; | &emsp;
+<a href="combined.html">Severe</a>&emsp; | &emsp;
+<a href="lethal.html">Lethal</a>&emsp; | &emsp;
+<a href="sizematters.html">Size Matters</a>&emsp; | &emsp;
+<a href="lotsize.html">Lot Sizes</a>&emsp; | &emsp;
+<a href="time.html">Time till onset</a>&emsp; | &emsp;
+<a href="secondpeak.html" target="_blank">Second Peak</a>&emsp; | &emsp;
+<a href="expiry.html">Lot Expiry Dates</a>&emsp; | &emsp;
+<a href="sweden.html">RNA Degradation</a>&emsp; | &emsp;
+<a href="connections.html">Causality</a>&emsp; | &emsp;
+<a href="allnothing.html">All or Nothing</a>&emsp; | &emsp;
+<a href="clusters.html">Clusters</a>&emsp; | &emsp;
+<a href="symptom.html">Symptom</a>&emsp; | &emsp;
+<a href="paralysis.html">Paralysis</a>&emsp;|&emsp;
+<a href="children.html">Children</a>&emsp; | &emsp;
+<a href="gender.html">Gender</a>&emsp; | &emsp;
+<a href="states.html">States</a>&emsp; | &emsp;
+<a href="geography.html">Geography</a>&emsp; | &emsp;
+<a href="recallsjapan.html">Japan</a>&emsp; | &emsp;
+<a href="casereports.html">Case Reports</a>&emsp; | &emsp;
+<a href="whistle.html">Whistle Blowers</a>&emsp; | &emsp;
+<a href="emails.html">EMA Leaks</a>&emsp; | &emsp;
+<a href="video.html">Video Library</a>&emsp; | &emsp;
+<a href="recovery.html" target="_blank">Treatment</a>&emsp; | &emsp;
+<a href="background.html">Background</a>&emsp; | &emsp;
+<a href="craig.zip" >Download Source Code</a>&emsp; | &emsp;
+<a href="datacleaning.html">Data Cleaning</a>&emsp; | &emsp;
+<a href="donatecreditcard.html">Donate</a>
+</font></p><br>
+
+
+<P><B><font color="red">If this site is slow loading that's because over 1 million people are accessing it right now. Please use auxillary site <a href="https://www.howbadismybatch.com">HowBadisMyBatch.com<a> which has been set up to cope with this overload. Thankyou.</font></b></p><br>
+
+
+
+
+
+
+<!-- 8. WARNING -->
+
+<Font color="red" size="-1"><p><b>Health Warning : </b></p>
+
+<p>Here are the latest updates from VAERS showing the most recent batches and their association with harm. This page is updated monthly.</font>&emsp;&emsp;<a href="donatecreditcard.html"><b>Donate</b></a></p><br>
+   
+
+<P><b>Batches distributed in the USA - September 13th 2021 to December 14th 2021</b></p>
+<ul>
+<li><a href="pfizerseptdec21.xlsx">USA : Pfizer Batches : Vaccination Date between September 13th 2021 to December 14th 2021</a></li><br>
+<li><a href="modernaseptdec21.xlsx">USA : Moderna Batches : Vaccination Date between September 13th 2021 to December 14th 2021</a></li><br>
+<li><a href="janssenseptdec21.xlsx">USA : Janssen Batches : Vaccination Date between September 13th 2021 to December 14th 2021</a></li>
+</ul></P><br>
+
+
+
+<P><b>Batches distributed in other countries outside of the USA - September 13th 2021 to December 14th 2021</b></p>
+<ul>
+<li><a href="pfizerforeignseptdec21.xlsx">Recent Pfizer Batches Outside USA : Vaccination Date between September 13th 2021 to December 14th 2021</a></li><br>
+<li><a href="modernaforeignseptdec21.xlsx">Recent Moderna Batches Outside USA : Vaccination Date between September 13th 2021 to December 14th 2021</a></li><br>
+<li><a href="janssenforeignseptdec21.xlsx">Recent Janssen Batches Outside USA : Vaccination Date between September 13th 2021 to December 14th 2021</a></li><br>
+
+</ul></P><br>
+
+<P><b>Batches distributed in other countries outside of the USA - November 1st 2021 to January 17th 2022</b></p>
+<ul>
+<li><a href="boosternov-jan.xlsx" target="_blank">Moderna, Pfizer, Johnson Batches Outside USA : Vaccination Date between November 1st 2021 and January 17th 2022</a></li>
+</ul>
+</p><br>
+
+<p><img src="novjanboost.png" width="800" height="800"></img></p><br>
+
+<p><b>January 2022 - USA Vaccinations</b></p>
+<p>VAERS records 5458 adverse reports for this month. Severe reports remain very low in frequency.</p><br>
+
+<p><img src="january22usa.png" width="500" height="600"></img></p><br>
+
+<p>Out of 5498 reports in VAERS, there were 9 deaths, 48 life threatening conditions, and 15 disabilities. So the % of reports with severe reactions was 1.3%. See also - <a href="firstsecond.html" target="_blank">Doses</a></p><br>
+
+<p><b>February 16th 2022 - USA Vaccinations</b></p>
+
+<p>The number of people being vaccinated are lower than ever before - 5240 adverse reports since January 1st. This is less than 10% of the number of reports we had in the same January - February time period last year. </p><br>
+
+<p><img src="allfeb222.png" width="600" height="500"></img></p><br>
+
+<p>Here is the spreadsheet <a href="feb16222.xlsx" target="_blank">USA data : Jan 1st to Feb 16th 2022</a></p><br>
+
+<p>Whilst 2021 vaccines certainly induced a large number of immediate (acute) injuries and deaths, it seems that the 2022 vaccines are not doing so. </p>
+<p><ul>
+<li>There are less than 10% of the number of adverse reports compared to the same time last year.</li>
+<li>The % of reports that are severe is lower than the same time last year. </li>
+</ul>
+</p>
+<p>Lower uptake of the vaccines means that pharma has lowered or ceased production of vaccine. Consequently existing vaccine is becoming old and approaching expiry - the mRNA has degraded more, and is less toxic.</p><br>
+
+
+<p><b>A New Government Strategy</B></p>
+<p>If short-term effects are absent, what about long term effects such as those resulting from reduction of the immune system? Such effects would not show up immediately after vaccination. They would only be detectable by carrying out a white cell count, or by observing greater susceptibility to illnesses</p>
+
+<p>If we have leaned anything from 2021, it is that the governments are willing to push harmful substances with no intent to protect us from harms caused. That intent to harm remains unchanged.</p>
+
+<p>So what's coming next ? If Government strategy has changed, Government motives have not.. If acute injury is being phased out - some other form of harm ( e.g.long-term injury) may take its place. There are several hints in the media about a new variant that is similar to HIV, and pharma are already preparing a HIV "vaccine" for mass production.  A HIV "variant" would certainly provide a convenient cover for those whose immune systems are already compromised by doses 1 and 2. Conversely, cases of immune compromise would be used to justify the deployment of a HIV vaccine on all - the vaccine itself being the infectious agent.</P></br>
+
+
+
+
+
+
+
+
+<!-- 18. CONTACT -->
+
+<p><b>Contact</b></p>
+<p><a href="mailto:covidscienceteam@protonmail.com" target="_blank"><b>covidscienceteam@protonmail.com</b></a></p><br><br>
+
+<P>Created by Craig Paardekooper &#169;2021</P></font>
+
+
+
+
+</body>
+</html
